@@ -33,10 +33,10 @@ func main() {
 
 	remainingTickets = remainingTickets - uint(userTickets)
 	bookings[0] = firstName + "" + lastName
-	bookings = (bookings, firstName + "" + lastName)
+	// bookings = (bookings, firstName + "" + lastName)
 
-	fmt.Printf("The whole slice %v", bookings)
-	
+	fmt.Printf("The whole slice %v\n", bookings)
+	fmt.Printf("The first value : %v\n", bookings[0])
 
 	fmt.Printf("Thank you %v %v for booking %v tickets, You will recieve a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
