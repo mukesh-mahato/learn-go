@@ -35,6 +35,9 @@ func main() {
 	bookings[0] = firstName + "" + lastName
 	bookings = (bookings, firstName + "" + lastName)
 
+	fmt.Printf("The whole slice %v", bookings)
+	
+
 	fmt.Printf("Thank you %v %v for booking %v tickets, You will recieve a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 }
