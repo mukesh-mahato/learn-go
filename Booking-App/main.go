@@ -35,25 +35,48 @@ func main() {
 		fmt.Println("Enter number of tickets: ")
 		fmt.Scan(&userTickets)
 
-		remainingTickets = remainingTickets - uint(userTickets)
-		// bookings[0] = firstName + "" + lastName
-		bookings = append(bookings, firstName+" "+lastName)
+		isValidName := len(firstName) >= 2 && len(lastName) >= 2
+		isEmailValid := strings.Contains(email, "@")
+		isValidTicketsNumber := userTickets > 0 && userTickets <= remainingTickets
 
-		// fmt.Printf("The whole slice %v\n", bookings)
-		// fmt.Printf("The first value : %v\n", bookings[0])
-		// fmt.Printf("Slice type : %T\n", bookings)
-		// fmt.Printf("Slice length : %v\n", len(bookings))
+		if isValidName && isEmailValid && isValidTicketsNumber {
+			remainingTickets = remainingTickets - uint(userTickets)
+			// bookings[0] = firstName + "" + lastName
+			bookings = append(bookings, firstName+" "+lastName)
 
-		fmt.Printf("Thank you %v %v for booking %v tickets, You will recieve a confirmation email at %v\n", firstName, lastName, userTickets, email)
-		fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
+			// fmt.Printf("The whole slice %v\n", bookings)
+			// fmt.Printf("The first value : %v\n", bookings[0])
+			// fmt.Printf("Slice type : %T\n", bookings)
+			// fmt.Printf("Slice length : %v\n", len(bookings))
 
-		firstNames := []string{}
-		for _, booking := range bookings {
-			var name = strings.Fields(booking)
-			var firstName = name[0]
-			firstNames = append(firstNames, firstName)
+			fmt.Printf("Thank you %v %v for booking %v tickets, You will recieve a confirmation email at %v\n", firstName, lastName, userTickets, email)
+			fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
+
+			firstNames := []string{}
+			for _, booking := range bookings {
+				var name = strings.Fields(booking)
+				var firstName = name[0]
+				firstNames = append(firstNames, firstName)
+			}
+			fmt.Printf("The first name of booking are %v\n", firstNames)
+
+			if remainingTickets == 0 {
+				fmt.Println("Our conference is booked. Come back next year")
+				break
+			}
+
+		} else {
+			if !isValidName {
+				fmt.Println("Firstname or Lastname you entered is too short")
+			}
+			if !isEmailValid {
+				fmt.Println("Email address you entered doesnot contains 'a'")
+			}
+			if !isValidTicketsNumber {
+				fmt.Println("Ticket number you entered is invalid")
+			}
 		}
-		fmt.Printf("The first namea of booking are %v\n", firstNames)
+
 	}
 
 }
