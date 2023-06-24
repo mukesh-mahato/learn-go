@@ -13,15 +13,11 @@ func main() {
 
 	file, err := os.Create("./myFiles.txt")
 
-	if err != nil {
-		panic(err)
-	}
+	checkNilErr(err)
 
 	length, err := io.WriteString(file, content)
 
-	if err != nil {
-		panic(err)
-	}
+	checkNilErr(err)
 
 	fmt.Println("length is: ", length)
 	defer file.Close()
@@ -30,8 +26,12 @@ func main() {
 
 func readFile(filename string) {
 	dataByte, err := ioutil.ReadFile(filename)
+	checkNilErr(err)
+	fmt.Println("Text data inside the file is\n", string(dataByte))
+}
+
+func checkNilErr(err error) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Text data inside the file is\n", string(dataByte))
 }
