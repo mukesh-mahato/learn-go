@@ -15,3 +15,8 @@ func myDefer() {
 		defer fmt.Print(i)
 	}
 }
+
+// Hello
+// 43210Two
+// One
+// World

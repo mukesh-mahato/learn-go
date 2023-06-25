@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Functions in golang")
+	fmt.Println("Functions in golang") //Functions in golang
 
 	result := add(4, 5)
-	fmt.Println(result)
+	fmt.Println(result) //9
 
 	proResult := proAdd(1, 2, 3, 4, 5, 6, 7)
-	fmt.Println(proResult)
+	fmt.Println(proResult) //28
 }
 
 func add(num1 int, num2 int) int {

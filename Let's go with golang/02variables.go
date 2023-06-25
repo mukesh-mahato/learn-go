@@ -6,35 +6,35 @@ const LoginToken string = "fdaggbsdbafmdb" //Public
 
 func main() {
 	var username string = "knoxartiste"
-	fmt.Println(username)
-	fmt.Printf("variable is of type: %T \n", username)
+	fmt.Println(username)                              //knoxartiste
+	fmt.Printf("variable is of type: %T \n", username) //variable is of type: string
 
 	var isLoggedIn bool = true
-	fmt.Println(isLoggedIn)
-	fmt.Printf("variable is of type: %T \n", isLoggedIn)
+	fmt.Println(isLoggedIn)                              //true
+	fmt.Printf("variable is of type: %T \n", isLoggedIn) //variable is of type: bool
 
 	var smallVal uint8 = 255
-	fmt.Println(smallVal)
-	fmt.Printf("variable is of type: %T \n", smallVal)
+	fmt.Println(smallVal)                              //225
+	fmt.Printf("variable is of type: %T \n", smallVal) //variable is of type: uint8
 
 	var smallFloat float32 = 255.4545674746
-	fmt.Println(smallFloat)
-	fmt.Printf("variable is of type: %T \n", smallFloat)
+	fmt.Println(smallFloat)                              //255.45457
+	fmt.Printf("variable is of type: %T \n", smallFloat) //variable is of type: float32
 
 	// default values and some aliases
 	var anotherVariable int
-	fmt.Println(anotherVariable)
-	fmt.Printf("Variable is of type: %T \n", anotherVariable)
+	fmt.Println(anotherVariable)                              //0
+	fmt.Printf("Variable is of type: %T \n", anotherVariable) //Variable is of type: int
 
 	// implicit type
 	var website = "go.dev"
-	fmt.Println(website)
+	fmt.Println(website) //go.dev
 
 	// no var style
 	numberOfUser := 3000
-	fmt.Println(numberOfUser)
+	fmt.Println(numberOfUser) //3000
 
-	fmt.Println(LoginToken)
-	fmt.Printf("Variable is of type: %T \n", LoginToken)
+	fmt.Println(LoginToken)                              //fdaggbsdbafmdb
+	fmt.Printf("Variable is of type: %T \n", LoginToken) //Variable is of type: string
 
 }
