@@ -5,6 +5,23 @@ import (
 	"sort"
 )
 
+type Stack struct {
+	data []int
+}
+
+func (s *Stack) Push(value int) {
+	s.data = append(s.data, value)
+}
+
+func (s *Stack) Pop() int {
+	if len(s.data) == 0 {
+		return -1
+	}
+	value := s.data[len(s.data)-1]
+	s.data = s.data[:len(s.data)-1]
+	return value
+}
+
 func main() {
 	fmt.Println("Slices in go lang") //veg list:  [potato tomato beans ]
 
@@ -50,5 +67,15 @@ func main() {
 	numbers = append(numbers[:2], numbers[3:]...)
 
 	fmt.Println(numbers) // Output: [1 2 4 5 6]
+
+	// Implementing data structures: Slices are often used as the underlying data structure for implementing various data structures such as stacks, queues, and dynamic arrays. They allow for efficient insertion, deletion, and resizing operations.
+
+	stack := Stack{}
+	stack.Push(10)
+	stack.Push(20)
+	stack.Push(30)
+
+	fmt.Println(stack.Pop()) // Output: 30
+	fmt.Println(stack.Pop()) // Output: 20
 
 }
