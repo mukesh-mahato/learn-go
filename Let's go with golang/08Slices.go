@@ -40,4 +40,15 @@ func main() {
 	cources = append(cources[:index], cources[index+1:]...)
 	fmt.Println(cources) //[reactjs javascript python ruby]
 
+	// Dynamic lists: Slices are commonly used to represent dynamic lists of elements. They allow for easy appending, removing, and modifying elements without having to manually manage array sizes.
+	numbers := []int{1, 2, 3, 4, 5}
+
+	// Append an element
+	numbers = append(numbers, 6)
+
+	// Remove an element at index 2
+	numbers = append(numbers[:2], numbers[3:]...)
+
+	fmt.Println(numbers) // Output: [1 2 4 5 6]
+
 }
