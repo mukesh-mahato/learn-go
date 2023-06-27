@@ -1,5 +1,11 @@
 package main
 
+import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+)
+
 // Model for course - file
 type Course struct {
 	CourseId    string  `json: "coueseid"`
@@ -23,4 +29,18 @@ func (c *Course) IsEmpty() bool {
 
 func main() {
 
+}
+
+//controllers - file
+
+//serve home route
+
+func serveHome(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("<h1>We are learning to build api in golang</h1>"))
+}
+
+func getAllCources(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Get all cources")
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(coueses)
 }
