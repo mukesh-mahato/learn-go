@@ -15,10 +15,18 @@ func main() {
 	fmt.Println("JS shotrs for: ", languages["JS"]) //JS shotrs for:  javascript
 
 	delete(languages, "RB")
+	fmt.Println(languages["RB"])                    //0
 	fmt.Println("List of all languages", languages) //List of all languages map[JS:javascript PY:Python]
 
 	for key, value := range languages {
 		fmt.Printf("for key %v, value is %v\n", key, value) //for key JS, value is javascript ,for key PY, value is Python
 
 	}
+
+	pop, ok := languages["RB"]
+	fmt.Println(pop, ok) //0 , false
+	pops, oks := languages["PY"]
+	fmt.Println(pops, oks) //Python , true
+
+	fmt.Println(len(languages)) //2
 }
