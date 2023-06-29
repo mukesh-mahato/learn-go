@@ -19,4 +19,22 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println("robots %s", string(robots))
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello Go!"))
+	})
+
+	err = http.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+
+	fmt.Println("start")
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println("error:", err)
+		}
+	}()
+	panic("something happened")
+	fmt.Println("end")
 }
